@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-const Thumbnail = ({ imageUrl }) => {
+import Link from 'next/link';
+const Thumbnail = ({ imageUrl, slug }) => {
   return (
     <motion.div
       whileHover={{
@@ -22,15 +23,17 @@ const Thumbnail = ({ imageUrl }) => {
       }}
       className="relative flex items-center mr-4 w-[20rem] h-[20rem] rounded-lg "
     >
-      <Image
-        className=" rounded-lg"
-        src={imageUrl}
-        alt="thumbnail"
-        width="100%"
-        height="100%"
-        objectFit="cover"
-        layout="fill"
-      />
+      <Link href={`/video/${slug}`} passHref>
+        <Image
+          className=" rounded-lg"
+          src={imageUrl}
+          alt="thumbnail"
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          layout="fill"
+        />
+      </Link>
     </motion.div>
   );
 };

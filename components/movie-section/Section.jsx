@@ -11,7 +11,7 @@ const Section = ({ title, data }) => {
       </h1>
       <div className="flex items-center ">
         {data.map((item) => (
-          <Thumbnail key={item.slug} imageUrl={item.thumbnail.url} />
+          <Thumbnail key={item.id} imageUrl={item.thumbnail.url} slug={item.slug} />
         ))}
       </div>
     </div>
